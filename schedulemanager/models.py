@@ -11,6 +11,7 @@ class Service(db.Model):
         # __repr__ to represet itself in the form of a string
         return self.category.name
 
+
 class Vehicle(db.Model):
     # schema for the vehicle model
     id = db.Column(db.Integer, primary_key=True)
