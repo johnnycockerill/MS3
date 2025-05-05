@@ -1,0 +1,20 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "PG DB",
+            "connectString": "postgresql://neondb_owner:npg_cW51omHyrYFX@ep-quiet-flower-a29r86ds.eu-central-1.aws.neon.tech/humid_chomp_payer_394172",
+            "username": "postgres",
+            "database": "PG DB",
+            "connectionTimeout": 30,
+            "password": "Password"
+        }
+    ]
+}
