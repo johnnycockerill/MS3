@@ -8,3 +8,10 @@ body {
     flex: 1 0 auto;
   }
       
+#title {
+  margin-left: 3rem;
+}
+
+#title ul {
+  margin-right: 3rem;
+}
