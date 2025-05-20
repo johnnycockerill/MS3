@@ -32,3 +32,11 @@ def edit_service_type(service_id):
         db.session.commit()
         return redirect(url_for("services"))
     return render_template("edit_service.html", service=service)
+
+
+@app.route("/delete_service_type/<int:service_id>")
+def delete_service_type(service_id):
+    service = Service.query.get_or_404(service_id)
+    db.session.delete(service)
+    db.session.commit()
+    return redirect(url_for("services"))
