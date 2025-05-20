@@ -9,7 +9,7 @@ class Service(db.Model):
 
     def __repr__(self):
         # __repr__ to represet itself in the form of a string
-        return self.category.name
+        return self.service_name
 
 
 class Vehicle(db.Model):

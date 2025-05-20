@@ -5,7 +5,8 @@ from schedulemanager.models import Service, Vehicle
 
 @app.route("/")
 def home():
-    return render_template("vehicles.html")
+    vehicles = list(Vehicle.query.order_by(Vehicle.id).all())
+    return render_template("vehicles.html", vehicles=vehicles)
 
 
 @app.route("/services")
