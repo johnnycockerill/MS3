@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="light-blue-text text-darken-4 center-align">Add Vehicle</h3>
+
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('add_vehicle') }}">
+      <!-- vehicle reg -->
+      <div class="row">
+        <div class="input-field col s12">
+            <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+          <input id="vehicle_reg" name="vehicle_reg" minlength="3" maxlength="12" type="text" class="validate">
+          <label for="vehicle_reg">Vehicle Registration</label>
+        </div>
+      </div>
+      <!-- vehicle type -->
+      <div class="row">
+        <div class="input-field col s12">
+            <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+          <textarea id="vehicle_type" name="vehicle_type" minlength="3" maxlength="250" type="text" class="materialize-textarea validate">
+          </textarea>
+          <label for="vehicle_type">Vehicle Type</label>
+        </div>
+      </div>
+      <!-- work completed -->
+      <div class="row">
+        <div class="input-field col s12">
+          <div class="switch">
+              <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
+              <div>Work Completed?</div>
+              <label for="work_completed">
+                In Progress
+                <input type="checkbox" id="work_completed" name="work_completed">
+                <span class="lever"></span>
+                Completed
+              </label>
+            </div>
+        </div>
+      </div>
+      <!-- due date -->
+      <div class="row">
+        <div class="input-field col s12">
+            <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+          <input id="due_date" name="due_date" type="text" class="datepicker validate" required>
+          <label for="due_date">Due Date</label>
+        </div>
+      </div>
+      <!-- service type id -->
+      <div class="row">
+        <div class="input-field col s12">
+            <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+          <select name="service_id" id="service_id" class="validate">
+            <option value="" disabled selected>Choose Service Type</option>
+            {% for service in services %}
+              <option value="{{ service.id }}">{{ service.service_name }}</option>
+            {% endfor %}
+          </select>
+          <label for="service_id">Service Type</label>
+        </div>
+      </div>
+      <!-- submit button -->
+      <div class="row">
+        <div class="col s12 center-align">
+            <button type="submit" class="btn-large light-blue darken-1">
+                Add Vehicle <i class="fas fa-plus-square right"></i>
+            </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}

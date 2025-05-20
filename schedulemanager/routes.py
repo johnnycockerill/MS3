@@ -40,3 +40,20 @@ def delete_service_type(service_id):
     db.session.delete(service)
     db.session.commit()
     return redirect(url_for("services"))
+
+
+@app.route("/add_vehicle", methods=["GET", "POST"])
+def add_vehicle():
+    services = list(Service.query.order_by(Service.service_name).all())
+    if request.method == "POST":
+        vehicle = Vehicle(
+            vehicle_reg=request.form.get("vehicle_reg"),
+            vehicle_type=request.form.get("vehicle_type"),
+            work_completed=bool(True if request.form.get("work_completed") else False),
+            due_date=request.form.get("due_date"),
+            service_id=request.form.get("service_id")
+        )
+        db.session.add(vehicle)
+        db.session.commit()
+        return redirect(url_for("home"))
+    return render_template("add_vehicle.html", services=services)
