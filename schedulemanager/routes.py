@@ -22,3 +22,13 @@ def add_service_type():
         db.session.commit()
         return redirect(url_for("services"))
     return render_template("add_service.html")
+
+
+@app.route("/edit_service_type/<int:service_id>", methods=["GET", "POST"])
+def edit_service_type(service_id):
+    service = Service.query.get_or_404(service_id)
+    if request.method == "POST":
+        service.service_name = request.form.get("service_name")
+        db.session.commit()
+        return redirect(url_for("services"))
+    return render_template("edit_service.html", service=service)
