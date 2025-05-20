@@ -50,7 +50,7 @@ def add_vehicle():
         vehicle = Vehicle(
             vehicle_reg=request.form.get("vehicle_reg"),
             vehicle_type=request.form.get("vehicle_type"),
-            work_completed=bool(True if request.form.get("work_completed") else False),
+            work_completed=bool(True if request.form.get("work_completed") else False), # noqa
             due_date=request.form.get("due_date"),
             service_id=request.form.get("service_id")
         )
