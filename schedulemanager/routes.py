@@ -72,3 +72,11 @@ def edit_vehicle(vehicle_id):
         vehicle.service_id = request.form.get("service_id")
         db.session.commit()
     return render_template("edit_vehicle.html", vehicle=vehicle, services=services) # noqa
+
+
+@app.route("/delete_vehicle/<int:vehicle_id>")
+def delete_vehicle(vehicle_id):
+    vehicle = Vehicle.query.get_or_404(vehicle_id)
+    db.session.delete(vehicle)
+    db.session.commit()
+    return redirect(url_for("home"))
