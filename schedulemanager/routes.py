@@ -58,3 +58,17 @@ def add_vehicle():
         db.session.commit()
         return redirect(url_for("home"))
     return render_template("add_vehicle.html", services=services)
+
+
+@app.route("/edit_vehicle/<int:vehicle_id>", methods=["GET", "POST"])
+def edit_vehicle(vehicle_id):
+    vehicle = Vehicle.query.get_or_404(vehicle_id)
+    services = list(Service.query.order_by(Service.service_name).all())
+    if request.method == "POST":
+        vehicle.vehicle_reg = request.form.get("vehicle_reg")
+        vehicle.vehicle_type = request.form.get("vehicle_type")
+        vehicle.work_completed = bool(True if request.form.get("work_completed") else False) # noqa
+        vehicle.due_date = request.form.get("due_date")
+        vehicle.service_id = request.form.get("service_id")
+        db.session.commit()
+    return render_template("edit_vehicle.html", vehicle=vehicle, services=services) # noqa

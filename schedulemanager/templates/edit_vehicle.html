@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="light-blue-text text-darken-4 center-align">Edit Vehicle</h3>
+
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('edit_vehicle', vehicle_id=vehicle.id) }}">
+      <!-- vehicle reg -->
+      <div class="row">
+        <div class="input-field col s12">
+            <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+          <input id="vehicle_reg" name="vehicle_reg" value="{{ vehicle.vehicle_reg }}" minlength="3" maxlength="12" type="text" class="validate">
+          <label for="vehicle_reg">Vehicle Registration</label>
+        </div>
+      </div>
+      <!-- vehicle type -->
+      <div class="row">
+        <div class="input-field col s12">
+            <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+          <textarea id="vehicle_type" name="vehicle_type" minlength="3" maxlength="250" type="text" class="materialize-textarea validate">
+            {{- vehicle.vehicle_type -}}
+          </textarea>
+          <label for="vehicle_type">Vehicle Type</label>
+        </div>
+      </div>
+      <!-- work completed -->
+      <div class="row">
+        <div class="input-field col s12">
+          <div class="switch">
+              <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
+              <div>Work Completed?</div>
+              <label for="work_completed">
+                In Progress
+                {% if vehicle.work_completed == True %}
+                  <input type="checkbox" id="work_completed" name="work_completed" checked>
+                {% else %}
+                  <input type="checkbox" id="work_completed" name="work_completed">
+                {% endif %}
+                  <span class="lever"></span>
+                Completed
+              </label>
+            </div>
+        </div>
+      </div>
+      <!-- due date -->
+      <div class="row">
+        <div class="input-field col s12">
+            <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+          <input id="due_date" name="due_date" type="text" value="{{ vehicle.due_date.strftime('%d %B, %Y') }}" class="datepicker validate" required>
+          <label for="due_date">Due Date</label>
+        </div>
+      </div>
+      <!-- service type id -->
+      <div class="row">
+        <div class="input-field col s12">
+            <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+          <select name="service_id" id="service_id" class="validate">
+            <option value="" disabled selected>Choose Service Type</option>
+            {% for service in services %}
+              {% if service == vehicle.service %}
+                <option value="{{ service.id }}" selected>{{ service.service_name }}</option>
+              {% else %}
+                <option value="{{ service.id }}">{{ service.service_name }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+          <label for="service_id">Service Type</label>
+        </div>
+      </div>
+      <!-- submit button -->
+      <div class="row">
+        <div class="col s12 center-align">
+            <button type="submit" class="btn-large light-blue darken-1">
+                Edit Vehicle <i class="fas fa-plus-square right"></i>
+            </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}
