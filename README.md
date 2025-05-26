@@ -124,86 +124,96 @@ The team statistics section for team 1 develops as the game progresses (see belo
 
 #### Welcome Image and Text
 
-- The Welcome main image is designed to state the nature and purpose of the website.  It has been designed to a colour and size to contrast against the background and stand out without drawing attention from the primary area of the app.
+- The Welcome main image is designed to state the nature and purpose of the page.  It has been designed to a colour and size to contrast against the background and stand out without drawing attention from the primary area of the app.
 
 #### Main Content
 
 - The main content is centred on the page.
-  - Firstly a series of prompts will request information from the user, the inputs will be required for the javascript functions to run.  All buttons barring one one will be disabled at this stage.
+  - Below page title is located a button to generate a new vehicle service.  This button directs the user to specific page.
+  - A series of vehicle services will be displayed as collapsible dropdowns.
+  - The visible element of the drop down displays priority information
+    - Vehicle registration
+    - Due date for completion
+    - Completion status
+      - Services yet to be completed are highlighted with red exclamation mark and text to catch the eye of the user to incomplete tasks.
+      - Completed services are marked with green tick.
 
-  <img src="assets/images/team1_choice_screenshot.JPG">
-
-  <img src="assets/images/team2_choice_screenshot.JPG">
+  <img src="./schedulemanager/static/images/home_2.JPG">
+  - Accessing the drop down provides further detail:
+    - Service type
+    - Vehicle description
+    - Options for editing or deleting the vehicle service
+  <img src="./schedulemanager/static/images/dropdown.JPG">
     
-  - These required prompts run after the user clicks 'input info' button.  All other buttons will be disabled at this point.
-  - Once load function (and prompts) have completed the page will display a series of buttons, all labelled with specific commands for user interaction.
-- The live stats area will display 'bat 1', 'bat 2' and 'bowl' as the players names by default prior to beginning main purpose.  This area will display live individual stats and total team score as the game progresses.
+### Service Types Page
 
-  <img src="assets/images/live_stat_screenshot.JPG">
+#### Welcome Image and Text
 
-- The controls area holds a series of buttons and drop-downs linked to buttons.  These are coloured when active and greyed out when disabled to improve user experience and help navigation through the process.
-      
-  <img src="assets/images/buttons.JPG">
+- The Welcome main image is designed to state the nature and purpose of the page.  It has been designed to a colour and size to contrast against the background and stand out without drawing attention from the primary area of the app.
 
-  <img src="assets/images/disabled_buttons.JPG">
+#### Main Content
 
-- At the bottom of page are the players stats area.  There are two panes, one for dismissed bats and one for individual bowlers stats which increase as the match progresses.
-  - There is a sub heading for clarity displaying team name above respective players using the data inputted by the user earlier in the process.
+- The main content is centred on the page.
+  - Below page title is located a button to generate a new service type.  This button directs the user to specific page.
+  - A series of service types will be displayed as materialize cards.
+    - The number of cards per row depends on screen size.
+    - Each card presents the user with service type title and buttons to either edit or delete this service type.
+    - The delete function on the card cascades through the indivdual vehicle services linked to that service type, deleting all services of that type.
 
-  <img src="assets/images/player_stats.JPG">
+  <img src="./schedulemanager/static/images/service_types.JPG">
 
-  <img src="assets/images/bat_stat_screenshot.JPG">
+### Add Service Type Page
 
-  <img src="assets/images/bowler_stat_screenshot.JPG">
+#### Welcome Image and Text
 
-  - These two panes will appear inline vertically on small screen sizes
+- The Welcome main image is designed to state the nature and purpose of the page.  It has been designed to a colour and size to contrast against the background and stand out without drawing attention from the primary area of the app.
 
-#### Begin Process
+#### Main Content
 
-- Positioned below page title and above all other content will be a button labelled 'start innings', at this stage the button will be highlighted red to indicate this as a start point.
+- The main content is centred on the page.
+  - Below page title is located a pane giving the user the option to create a new service type.
+    - The panel comprises of a text input for service name and a submit button.
+    - Submitting a service type assigns a unique service ID to the entry allowing vehicles to be assigned to that branch.
+    - Submitting the service type then returns the user to the service types page.
+  
+  <img src="./schedulemanager/static/images/add_service_2.JPG">
 
-  <img src="assets/images/disabled_buttons_screenshot.JPG">
+### Edit Service Type Page
 
-- All other buttons will be grayed out and disabled to prevent the user calling functions in an order that would flaw the process.
-  - Shading out all inactive buttons will aid the users navigation to next steps.
+- The edit service type page looks and operates very similar to the add service page, differing in that the page fetches the service information from the unique service ID for the user to alter rather than start a fresh.
+  <img src="./schedulemanager/static/images/edit_service.JPG">
 
-- Once 'Start Innings' button is clicked,  bowlers names and bat 1 and 2 will update with the data inputted by the user.  A prompt will also appear requesting the user to choose the opening bowler.
+### Add Vehicle Page
 
+#### Welcome Image and Text
 
-  <img src="assets/images/bowler_choice_screenshot.JPG">
+- The Welcome main image is designed to state the nature and purpose of the page.  It has been designed to a colour and size to contrast against the background and stand out without drawing attention from the primary area of the app.
 
+#### Main Content
 
-  Once selected the bowlers name will appear within the live scores area replacing the default 'bowl' name.
+- The main content is centred on the page.
+  - Below page title is located a pane giving the user the option to create a new vehicle service.
+    - The panel comprises of a text input for service name and a submit button:
+      - Vehicle registration
+      - Vehicle type
+      - Task status as a boolean switch, 'in progress' or 'completed'
+      - Service due date
+      - Service type as drop down, where the list values are generated by the avaiable service types committed to database.
+    - Submitting the service type then returns the user to the vehicle services page.
+  
+  <img src="./schedulemanager/static/images/add_vehicle_1.JPG">
+  <img src="./schedulemanager/static/images/add_vehicle_2.JPG">
+  <img src="./schedulemanager/static/images/service_type_dropdown.JPG">
 
-#### Main Purpose
+### Edit Vehicle Service Page
 
-- The user is free to choose any of the buttons to match the play of the match.  
-  Each button updates all necessary stats requiring the user to click once reagrdless of match play.
-
-- After every 6 legal balls (ie, not including wides or no-balls), a prompt will appear, requesting the user choose another bowler.
-    - Note - The current bowler will not be an option for this process.
-      
-      <img src="assets/images/bowler_change_screenshot.JPG">
-
-    Once chosen the new bowler will replace the existing bowler within the active scores area and the previous bowlers stats will be updated with the bowlers stats pane.
-      - Should the bowler have been used already their existing stats will be added to.
-      - The two active bats will be swapped, alternating the 'strike' characteristic.
-
-- Should a bat be dismissed by using the 'wicket' button, the strike bat will be replaced with next bat in the order.
-  - The departing bat's score will be dispalyed in the bats team pane.
-
-      <img src="assets/images/bat_stat_screenshot.JPG">
-
-
-- Whichever occurs first between loosing 5 wickets or reaching 10-overs initiates 'end of innings'.  The total score is logged and the two teams swap, beggining the process from fresh.
-
-- Once a second innings is completed the score is logged.  A function runs to display which team won and their total scores.
+- The edit vehicle service page looks and operates very similar to the add vehicle page, differing in that the page fetches the service information from the unique vehicle ID for the user to alter rather than start a fresh.
+  <img src="./schedulemanager/static/images/edit_vehicle.JPG">
 
 ### Features Left to be Implemeted in Future Releases
 
-- The website could be linked to the league site, allowing users to view live scoresheets from other matches in the division or league.
-- The team and player data could be part of a collective database, held by league server.
-- The website would be developed to score both innings of a match, declaring a winner.
+- The site could operate different levels of logins to restrict different user types to enter and edit only certain areas of information.
+- The website could utilise modal functions as a safety feature to warn users of potentially unintentionally deleting information.
 
 ### Technologies Used
 
@@ -215,9 +225,6 @@ The team statistics section for team 1 develops as the game progresses (see belo
 
 * [Google Fonts](https://fonts.googleapis.com/)
     - Google Fonts was used to import the font Roboto and Exo into the style.css file. This font was used throughout the site.
-
-* [GitPod](https://gitpod.io/)
-     - GitPod was used for writing code, committing, and then pushing to GitHub.
 
 * [GitHub](https://github.com/)
      - GitHub was used to store the project after pushing.
@@ -231,8 +238,11 @@ The team statistics section for team 1 develops as the game progresses (see belo
 * [JavaScript Validator](https://jshint.com/)
     - JSHint JavaScript Validator was used to validate the JS code.
 
-* [Bootstrap Library](https://getbootstrap.com/docs/4.0/components/carousel/)
-    - Bootstrap was used for the image carousel.
+* [Materialize Library](https://materializecss.com/)
+    - Materialize was used extensively throughout this app.
+
+* [Jinja Integration](https://jinja.palletsprojects.com/en/stable/integration/#flask)
+    - Jinja integration with flask has been used.
 
 ## Testing
 
@@ -240,28 +250,25 @@ The team statistics section for team 1 develops as the game progresses (see belo
 
 Manual testing relies on human interaction to execute test cases and identify defects in a software application, while automated testing uses pre-written scripts to run tests repeatedly and efficiently, with the key principles being that manual testing is more flexible and exploratory, while automated testing prioritizes speed, consistency, and regression testing across repetitive tasks. 
 
-- As a user, I want to be able to clearly know how to start and end a match scoring event.
-  - The website requests necessary data from the user from autoload prompts, eliminating the chance the user will start the process without inputting all required inputs.
-  - To begin the process a button is highlighted red and has hover function whilst this button is active.
+- As a user, I want to be able to navigate the controls intuitively and know which option to choose.
+  - The pages are designed to be simple but effective, the options to available to the user are claer and unambiguous.
 
-- As a user, I want to be able to see the live score as well as individuals peformances.
-  - All team scores and individual scores are visbible at all times whilst the process is live.
+- As a user, I want to be able to clearly create a custom service type.
+  - Within the services page there is a clear button labelled 'add service type' which takes the user to another page.  This page is simple and clear, allowing the user to create a new service type.  Upon submition the user is returned to the services page where the new service type is visible.
 
-- As a customer, I want to be able to navigate the website and controls intuitively.
-    - The website has an intuitive, consistent structure and design allowing for easy navigation.
-    - All similar command buttons are located in the same area of the page, buttons carrying a different style of function are styled to appear different.
-    - The website has interactive aids that assist the user, changing colour to highlight the next step or show disabled functions.
+- As a user, I want to be able to asign a vehicle with all relevant information to service type.
+  - Within the vehicles page there is a clear and unambiguous button allowing the user to create a new service.  This link is also available directly from the navbar.
+  - Within the new page the series of inputs is presented in a clear and uncluttered manner to allow the user a clear understanding of what is required for inputs.
 
-- As a customer, I want to be able to determine the outcome of a cricket match using this app.
-    - The page will dtermine a winner based on the users input throughout the process.
+- As a user, I want to be able to have the abilty to view and edit existing vehicle services.
+  - Within the vehicles page all services are listed, selecting a service prompts a drop down displaying information in a clear and concise format.  Within this information is a clear 'edit' button.
+  - Selecting edit takes the user to new page presenting the user with the existing information linked to that vehicles unique vehicle ID.  Altering information and submitting here updates the database, retaining new information entered.
 
-- As a customer, I want to be able to clearly see how individual players performed.
-    - There is a section of the page which shows the bowlers stats throughout the entire innings.
-    - There is a section of the page which details bats scores who have already been dismissed as well as displaying the two active bats within the active scores area of the page.
+- As a user, I want to be able to delete/cancel a service booking.
+  - Within indiviudal vehicle services is a clear delete button, clicking this button deleted that particular service of that ID.
 
-- As a customer, I want to be able to have control of the input to allow for every action on the field.
-    - The range of controls allows for user inputs in a clear and concise manner, mostly from one click.
-    - These controls are colour coordinated by active and disabled.
+- As a user, I want to be able to view whether a service has been completed.
+  - Within the services page, incomplete services are highlighted with red 'INCOMPLETE' text and a red exclamation mark icon, making them clearly distinguishable from completed services.
 
 ### Code Validation
 
@@ -275,18 +282,18 @@ Manual testing relies on human interaction to execute test cases and identify de
   <img src="assets/images/css_validation.JPG">
 <br>
 
-- JSHint Validator shows zero errors, however 134 warnings all relating to mozilla browser compatability.
+- JSHint Validator shows zero errors, however 4 warnings all relating to mozilla browser compatability.
 
-  <img src="assets/images/js_hint_validation.JPG">
+  <img src="./schedulemanager/static/images/javascript_validation.JPG">
 <br>
 
 ### Accessibility
 
 * Used Lighthouse in Chrome DevTools to confirm that the colors and fonts being used in throughout the website are easy to read and accessible.
 
-  <img src="assets/images/lighthouse_desktop.JPG">
+  <img src="./schedulemanager/static/images/lighthouse_desktop.JPG">
 
-  <img src="assets/images/lighthouse_mobile.JPG">
+  <img src="./schedulemanager/static/images/lighthouse_mobile.JPG">
 
 
 ### Tools Testing
@@ -353,7 +360,12 @@ Manual testing relies on human interaction to execute test cases and identify de
 
 ### Media
 
-* [League Website - Play Cricket (ECB)](https://s3-eu-west-1.amazonaws.com/pc-static.ecb.co.uk/images/logo.png)
+* [Volvo Trucks Logo](https://www.clipartmax.com/middle/m2H7H7H7G6Z5A0m2_commercial-fleet-cleaning-volvo-truck-logo-png/)
+* [Scania Trucks Logo](https://www.swedishchamber.com.au/wp-content/uploads/2021/06/scania_lock-up_v_pos_L_rgb.png.webp)
+* [DAF Trucks Logo](https://www.clipartmax.com/middle/m2H7H7b1i8A0K9K9_daf-logo-parallel/)
+* [Mercedes Truck Logo](https://www.cleanpng.com/png-mercedes-benz-logo-8324655/)
+* [DVSA Logo](https://content.govdelivery.com/attachments/fancy_images/UKDVSA/2021/07/4740648/dvsa-logo-digital-original_original.png)
+
 
 ### Code
 
