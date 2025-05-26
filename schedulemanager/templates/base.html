@@ -39,27 +39,45 @@
         {% endblock %}
     </main>
 
-    <footer class="page-footer blue-grey lighten-2">
+    <footer class="blue-grey lighten-2">
+      <section>
+      <div class="row right hide-on-med-and-down">
+        <div class="col l12 center-align">
+          <div class="footer_logo">
+            <span><a class="grey-text text-lighten-3" href="https://www.volvotrucks.co.uk/en-gb/tools/dealer-locator.html" target="_blank"><img src="../static/images/volvo_logo.png" alt="volvo trucks logo"></a></span>
+            <span><a class="grey-text text-lighten-3" href="https://www.scania.com/uk/en/home/find-dealers.html" target="_blank"><img src="../static/images/scania_logo.png" alt="scania trucks logo"></a></span>
+            <span><a class="grey-text text-lighten-3" href="https://www.mercedes-benz-trucks.com/gb/en/dealer-locator.html" target="_blank"><img src="../static/images/merc_logo.png" alt="mercedes trucks logo"></a></span>
+            <span><a class="grey-text text-lighten-3" href="https://www.daf.co.uk/en-gb/dealer-locator-page" target="_blank"><img src="../static/images/daf_logo.png" alt="DAF trucks logo"></a></span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
         <div class="container">
-          <div class="row">
-            <div class="col l4 s12">
-              <h5 class="white-text">Links</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="https://www.daf.co.uk/en-gb/dealer-locator-page" target="_blank"><img src="../static/images/daf_logo.png" alt="DAF trucks logo"></a></li>
-                <li><a class="grey-text text-lighten-3" href="https://www.volvotrucks.co.uk/en-gb/tools/dealer-locator.html" target="_blank"><img src="../static/images/volvo_trucks.jpg" alt="volvo trucks logo"></a></li>
-                <li><a class="grey-text text-lighten-3" href="https://www.scania.com/uk/en/home/find-dealers.html" target="_blank">Scania</a></li>
-                <li><a class="grey-text text-lighten-3" href="https://www.mercedes-benz-trucks.com/gb/en/dealer-locator.html" target="_blank">Mercedes</a></li>
-              </ul>
+          © 2025 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="https://www.gov.uk/government/organisations/driver-and-vehicle-standards-agency" target="_blank"><img src="../static/images/dvsa_logo.png" alt="dvsa logo"></a>
+        </div>
+      </div>
+      </section>
+      <!-- mobile navbar -->
+      <div class="footer-container hide-on-large-only">
+        <section class="footer-links">
+          <button class="collapsible blue-text darken-2">Dealer Links</button>
+          <div class="small-footer center-align">
+            <a href="https://www.volvotrucks.co.uk/en-gb/tools/dealer-locator.html" target="_blank"><img src="../static/images/volvo_logo.png" alt="volvo truck logo"></a>
+            <a href="https://www.scania.com/uk/en/home/find-dealers.html" target="_blank"><img src="../static/images/scania_logo.png" alt="scania truck logo"></a>
+            <a href="https://www.mercedes-benz-trucks.com/gb/en/dealer-locator.html" target="_blank"><img src="../static/images/merc_logo.png" alt="mercedes truck logo"></a>
+            <a href="https://www.daf.co.uk/en-gb/dealer-locator-page" target="_blank"><img src="../static/images/daf_logo.png" alt="daf truck logo"></a>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+              © 2025 Copyright Text
+              <a class="grey-text text-lighten-4 right" href="https://www.gov.uk/government/organisations/driver-and-vehicle-standards-agency" target="_blank"><img src="../static/images/dvsa_logo.png" alt="dvsa logo"></a>
             </div>
           </div>
-        </div>
-        <div class="footer-copyright">
-          <div class="container">
-          © 2025 Copyright Text
-          <a class="grey-text text-lighten-4 right" href="https://www.gov.uk/government/organisations/driver-and-vehicle-standards-agency" target="_blank">DVSA</a>
-          </div>
-        </div>
-      </footer>
+        </section>
+      </div>
+
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
