@@ -15,7 +15,7 @@ class Service(db.Model):
 class Vehicle(db.Model):
     # schema for the vehicle model
     id = db.Column(db.Integer, primary_key=True)
-    vehicle_reg = db.Column(db.String(50), unique=True, nullable=False)
+    vehicle_reg = db.Column(db.String(50), nullable=False)
     vehicle_type = db.Column(db.String(50), nullable=False)
     work_completed = db.Column(db.Boolean, default=False, nullable=False)
     due_date = db.Column(db.Date, nullable=False)

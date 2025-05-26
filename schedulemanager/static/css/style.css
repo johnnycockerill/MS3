@@ -43,3 +43,13 @@ main {
 .small-footer {
   padding-top: 1rem; 
 }
+  
+.completed {
+  color: red;
+}
+
+@media only screen and (max-width: 500px) {
+  .collapsible i {
+    margin-right: 0.5rem;
+  }
+}

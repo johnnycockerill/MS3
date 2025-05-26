@@ -16,9 +16,11 @@
     <li>
       <div class="collapsible-header white-text light-blue darken-4">
         <i class="fas fa-caret-down"></i>
-        <strong>{{ vehicle.vehicle_reg }}</strong> : {{ vehicle.due_date }}
+        <strong>{{ vehicle.vehicle_reg }}</strong> : {{ vehicle.due_date }}  
         {% if vehicle.work_completed == False %}
-            <i class="fas fa-exclamation-circle light-blue-text text-lighten-2"></i>
+           <i class="fas fa-exclamation-circle red-text"></i><span class="completed">INCOMPLETE</span>
+        {% else %}
+            <i class="completed fas fa-solid fa-check green-text"></i>
         {% endif %}
       </div>
       <div class="collapsible-body">
