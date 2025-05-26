@@ -6,7 +6,7 @@ The purpose of the site is to allow a quick and easy method to add, view, edit a
 
 [Visit deployed website](https://johnnycockerill.github.io/MS3/)
 
-<img src="assets/images/combined_screenshot.JPG">
+<img src="./schedulemanager/static/images/combined.JPG">
 
 ## Table of Contents
 1. [User Experience (UX)](#user-experience-ux)
@@ -50,36 +50,38 @@ The purpose of the site is to allow a quick and easy method to add, view, edit a
 
 - The range of options/controls should be clear and unambiguous, there could be a range of IT profiencies from users.
 
-- This site should detail the necessary information, such as service type, vehicle type, schedule dates, vehicle registration.
+- This site should detail the necessary information, such as service type, vehicle type, schedule dates, vehicle registration, service due date.
 
 ### Target Audience
 
-- The website is functional for a purpose, so would be used by any user looking to perform the function of scoring a cricket match.  With that in mind there are several aspects to consider:
+- The website primary aim is functionality for intended purpose as a service scheduler.  As such would be used by multiple users looking to perform a function within the task span from planning a service, customers viewing upcoming services and technicians reporting job complete.  With that in mind there are several aspects to consider:
     - The user could be of any gender, so appearances should remain neutral.
-    - Whilst the website is intended to be as easy to use as possible, it is highly likely that the user will have a fair to strong understanding of cricket.
+    - Whilst the website is intended to be as easy to use as possible, it is highly likely that the user will have a fair to strong understanding of the commercial vehicle service schedule requirements.
+    - The function of the app should be a priority over visual asthetics.
 
 ### User Goals
 
 - As a user, I want to be able to navigate the controls intuitively and know which option to choose.
 
-- As a user, I want to be able to clearly know how to start and end a match scoring event.
+- As a user, I want to be able to clearly create a custom service type.
 
-- As a user, I want to be able to see the live score as well as individuals peformances.
+- As a user, I want to be able to asign a vehicle with all relevant information to service type.
 
-- As a user, I want to be able to have control of the input to allow for every action on the field.
+- As a user, I want to be able to have the abilty to view and edit existing vehicle services.
+
+- As a user, I want to be able to delete/cancel a service booking.
+
+- As a user, I want to be able to view whether a service has been completed.
 
 ### Color Scheme
 
-The primary colour used is a pastel grey (#E6ECF0), used purposely as an colour which is easy on the eyes in the event of prolonged use, but still allows for clear definition of the active area of the site.
+The colour used for nav bar and footer is blue-grey (#90a4ae), used purposely as a colour which is easy on the eyes in the event of prolonged use, but still allows for clear definition of a less active area of the site.
 
-<img src="assets/images/colour_choice.JPG">
-
+The Colour used for headers of more active areas of the app is a dark version of light-blue (#01579b).  Intended to draw the user to that active area of the app whlist still appearing neutral in appearance.
 
 ### Typography
 
 The main font used in the site is Raleway, with Sans-Serif as the fallback font in case Raleway is not being imported correctly.
-
-The primary colour of for typography is a dark grey (#445361), following the same principles of the rest of the page would be easier on the eyes than black.
 
 ### Wireframes
 
@@ -101,24 +103,28 @@ The team statistics section for team 1 develops as the game progresses (see belo
 
 - The header contains the business name, in this instance it is also the purpose of site.
 
-- The header contains an interactive element, upon beginning the scoring process the page title will update to display the team names entered by the user.
+<img src="./schedulemanager/static/images/desktop_navbar.JPG">
 
-- The business name and page title will adjust in size and scale across screen sizes.
+- The header contains the navbar.  On large and medium sized screens appears on right side of header.  On small screen sizes the navbar becomes collapsed.
+
+<img src="./schedulemanager/static/images/mobile_navbar_1.JPG">
+<img src="./schedulemanager/static/images/mobile_navbar.JPG">
 
 #### Footer
 
-- The footer includes link to teams league page, in the form of the league icon.
+- The footer includes links to multiple HGV dealer service centre locator sites and a link to DVSA HGV page.
+
+<img src="./schedulemanager/static/images/footer_links.JPG">
+
+- The footer alters in style on small screen sizes.
+
+<img src="./schedulemanager/static/images/mobile_footer.JPG">
 
 ### Landing Page
 
 #### Welcome Image and Text
 
-- The Welcome main image is designed to state the nature and purpose of the website.  It has been designed to a colour and size to contrast against the background and stand out.
-- After first interaction with the website the welcome image will update to display the names of the two teams inputed by the user, these will update to have first letter capitalised regardless of how the user inputs.
-
-
-<img src="assets/images/team_name_screenshot.JPG">
-
+- The Welcome main image is designed to state the nature and purpose of the website.  It has been designed to a colour and size to contrast against the background and stand out without drawing attention from the primary area of the app.
 
 #### Main Content
 

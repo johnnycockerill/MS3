@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Schedule Manager</title>
@@ -16,8 +17,8 @@
         <!-- top navbar -->
         <nav class="blue-grey lighten-2">
             <div id="title" class="nav-wrapper">
-              <a href="#!" class="brand-logo">Schedule Manager</a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+              <a href="{{ url_for('home') }}" class="brand-logo">Schedule Manager</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger" aria-label="collapsible sidenav"><i class="fas fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('add_vehicle') }}">New Vehicle Service</a></li>
@@ -40,7 +41,7 @@
     </main>
 
     <footer class="blue-grey lighten-2">
-      <section class="large-footer">
+      <section>
       <div class="row center-align hide-on-med-and-down">
         <div class="col l12">
           <div class="footer_logo center-align">
@@ -57,8 +58,7 @@
         </div>
       </div>
       </div>
-
-      </section>
+    </section>
       <!-- mobile navbar -->
       <div class="footer-container hide-on-large-only">
         <section class="footer-links">
