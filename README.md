@@ -345,17 +345,23 @@ Manual testing relies on human interaction to execute test cases and identify de
 
 ## Deployment
 
-* This website was developed using [GitPod](https://www.gitpod.io/), which was then committed and pushed to GitHub using the GitPod terminal.
+* This website was developed using VS Code, which was then committed and pushed to GitHub using the VS Code terminal.  The site will be deployed by Heroku.
 
-### GitHub Pages
+### Heroku
 
-* Here are the steps to deploy this website to GitHub Pages from its GitHub repository:
+* Here are the steps to deploy this website from Heroku from its GitHub repository:
 
-    1. Log in to GitHub and locate the [GitHub Repository](https://github.com/).
-    2. At the top of the Repository, locate the Settings tab on the menu.
-    3. Scroll down the Settings page until you locate the Pages section.
-    4. Under Build and deployment, select "Deploy from a Branch" from the Source dropdown list.
-    5. Under Branch, select Main and /Root from the relevant dropdown lists, then click Save.
+    1. Log in to Heroku and create a new project.
+    2. Chooe nearest server location to current location.
+    3. Add in config variables from env file, specifically:
+        - DATABASE_URL - this variable links directly to the database platform.
+        - IP
+        - PORT
+        - SECRET_KEY
+        - DEBUG
+    4. Within 'Deploy' section choose connect to 'GitHub' and search for the relevant repository.
+    5. OPTIONAL - choosing 'Enable Automatic Deploys' keeps the Heroku live site up to date with any amendments pushed to GitHub.
+    6. Choose 'Deplpoy Branch', will install dependencies from requirements file.
 
 ## Credits
 
