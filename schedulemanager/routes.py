@@ -71,6 +71,7 @@ def edit_vehicle(vehicle_id):
         vehicle.due_date = request.form.get("due_date")
         vehicle.service_id = request.form.get("service_id")
         db.session.commit()
+        return redirect(url_for("home"))
     return render_template("edit_vehicle.html", vehicle=vehicle, services=services) # noqa
 
 

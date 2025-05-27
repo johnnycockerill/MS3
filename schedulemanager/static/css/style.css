@@ -46,6 +46,22 @@ main {
   color: red;
 }
 
+.modal {
+  max-width: 600px;
+  background-color: lightgray;
+}
+
+.modal p {
+  font-weight: bold;
+  text-align: center;
+}
+
+.modal h4 {
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+
 @media only screen and (max-width: 500px) {
   .collapsible i {
     margin-right: 0.5rem;
