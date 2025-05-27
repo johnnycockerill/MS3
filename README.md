@@ -17,14 +17,15 @@ The purpose of the site is to allow a quick and easy method to add, view, edit a
     5. [Typography](#typography)
     6. [Wireframes](#wireframes)
 2. [Features](#features)
-    1. [General](#general)
-    2. [Landing Page](#landing-page)
-    3. [Service Types Page](#service-types-page)
-    4. [Add Service Type Page](#add-service-type-page)
-    5. [Edit Service Type Page](#edit-service-type-page)
-    6. [Add Vehicle Page](#add-vehicle-page)
-    7. [Edit Vehicle Service Page](#edit-vehicle-service-page)
-    8. [Not Implemented](#features-left-to-be-implemted-in-future-releases)
+    1. [Database Design](#database-design)
+    2. [General](#general)
+    3. [Landing Page](#landing-page)
+    4. [Service Types Page](#service-types-page)
+    5. [Add Service Type Page](#add-service-type-page)
+    6. [Edit Service Type Page](#edit-service-type-page)
+    7. [Add Vehicle Page](#add-vehicle-page)
+    8. [Edit Vehicle Service Page](#edit-vehicle-service-page)
+    9. [Not Implemented](#features-left-to-be-implemted-in-future-releases)
 3. [Technologies Used](#technologies-used)
     1. [Languages Used](#languages-used)
     2. [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
@@ -36,7 +37,7 @@ The purpose of the site is to allow a quick and easy method to add, view, edit a
     5. [Manual Testing](#manual-testing)
 5. [Finished Product](#finished-product)
 6. [Deployment](#deployment)
-    - [Github Pages](#github-pages)
+    - [Heroku](#heroku)
 7. [Credits](#credits)
     1. [Content](#content)
     2. [Media](#media)
@@ -99,10 +100,17 @@ The team statistics section for team 1 develops as the game progresses (see belo
 
 ## Features
 
+### Database Design
+
+Flake8 was used to enforce python style conformity
+
 ### General
 
 - Responsive design across multiple device sizes.
 - Consistent colour scheme and design across all pages to enhance the user's navigation through the content.
+- Any user input requiring a date will use a javascript initialised date picker.
+
+<img src="./schedulemanager/static/images/date_picker.JPG">
 
 #### Header
 
@@ -144,11 +152,17 @@ The team statistics section for team 1 develops as the game progresses (see belo
       - Completed services are marked with green tick.
 
   <img src="./schedulemanager/static/images/home_2.JPG">
-  - Accessing the drop down provides further detail:
+
+- Accessing the drop down provides further detail:
     - Service type
     - Vehicle description
     - Options for editing or deleting the vehicle service
+
   <img src="./schedulemanager/static/images/dropdown.JPG">
+
+- Choosing the delete button will prompt a modal requesting confirmation of delete.
+
+  <img src="./schedulemanager/static/images/delete_modal_veh.JPG">
     
 ### Service Types Page
 
@@ -158,14 +172,16 @@ The team statistics section for team 1 develops as the game progresses (see belo
 
 #### Main Content
 
+<img src="./schedulemanager/static/images/service_types.JPG">
+
 - The main content is centred on the page.
   - Below page title is located a button to generate a new service type.  This button directs the user to specific page.
   - A series of service types will be displayed as materialize cards.
     - The number of cards per row depends on screen size.
     - Each card presents the user with service type title and buttons to either edit or delete this service type.
-    - The delete function on the card cascades through the indivdual vehicle services linked to that service type, deleting all services of that type.
+    - The delete function on the card cascades through the indivdual vehicle services linked to that service type, deleting all services of that type.  A modal will be displayed requesting confirmation of deleting service type.
 
-  <img src="./schedulemanager/static/images/service_types.JPG">
+<img src="./schedulemanager/static/images/delete_modal.JPG">
 
 ### Add Service Type Page
 
@@ -218,13 +234,13 @@ The team statistics section for team 1 develops as the game progresses (see belo
 ### Features Left to be Implemeted in Future Releases
 
 - The site could operate different levels of logins to restrict different user types to enter and edit only certain areas of information.
-- The website could utilise modal functions as a safety feature to warn users of potentially unintentionally deleting information.
 
 ### Technologies Used
 
 * [HTML5](https://en.wikipedia.org/wiki/HTML5)
 * [CSS3](https://en.wikipedia.org/wiki/CSS)
 * [JavaScript](https://simple.wikipedia.org/wiki/JavaScript)
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ### Frameworks, Libraries and Programs Used
 
@@ -279,12 +295,12 @@ Manual testing relies on human interaction to execute test cases and identify de
 
 - W3 Validator has highlighted zero errors.
 
-  <img src="assets/images/html_validation.JPG">
+  <img src="./schedulemanager/static/images/html_validation.JPG">
 <br>
 
 - W3C Validator shows zero errors with CSS:
 
-  <img src="assets/images/css_validation.JPG">
+  <img src="./schedulemanager/static/images/css_validation.JPG">
 <br>
 
 - JSHint Validator shows zero errors, however 4 warnings all relating to mozilla browser compatability.
@@ -362,6 +378,7 @@ Manual testing relies on human interaction to execute test cases and identify de
     4. Within 'Deploy' section choose connect to 'GitHub' and search for the relevant repository.
     5. OPTIONAL - choosing 'Enable Automatic Deploys' keeps the Heroku live site up to date with any amendments pushed to GitHub.
     6. Choose 'Deplpoy Branch', will install dependencies from requirements file.
+    7. Click 'Open App'.
 
 ## Credits
 
