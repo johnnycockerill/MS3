@@ -4,7 +4,7 @@ For my Milestone Project 3 I am creating a front end website linked to a Postgre
 
 The purpose of the site is to allow a quick and easy method to add, view, edit and delete different service types and be able to add, edit and delete individual services by vehicle to their respective services.
 
-[Visit deployed website](https://johnnycockerill.github.io/MS3/)
+[Visit deployed website](https://ms3-5cda93b0a75f.herokuapp.com/)
 
 <img src="./schedulemanager/static/images/combined.JPG">
 
