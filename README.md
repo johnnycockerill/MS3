@@ -343,7 +343,7 @@ Manual testing relies on human interaction to execute test cases and identify de
 
     - Navbar
 
-        - Hover function changes background colour of navbar links. - $${\color {green} PASS}$$
+        - Hover function changes background colour of navbar links. $${\color{green}PASS}$$
         - Navbar links direct user to correct page. $${\color{green}PASS}$$
         - Navbar collapses on small screen size. $${\color{green}PASS}$$
         - Selecting collapsed navbar icon opens navbar links. $${\color{green}PASS}$$
