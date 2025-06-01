@@ -329,11 +329,11 @@ Manual testing relies on human interaction to execute test cases and identify de
 
     - [Responsive Design Checker](https://www.responsivedesignchecker.com/) was used to check responsiveness of the site pages on different screen sizes.
     
-  <img src="assets/images/responsive_design_desktop.JPG">
+  <img src="./schedulemanager/static/images/responsive_desktop.JPG">
 
-  <img src="assets/images/responsive_design_tablet.JPG">
+  <img src="./schedulemanager/static/images/responsive_tablet.JPG">
 
-  <img src="assets/images/responsive_design_mobile.JPG">
+  <img src="./schedulemanager/static/images/responsive_mobile.JPG">
 
     - Chrome DevTools was used to test responsiveness in different screen sizes during the development process.
 
