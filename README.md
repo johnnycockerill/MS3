@@ -18,6 +18,7 @@ The purpose of the site is to allow a quick and easy method to add, view, edit a
     6. [Wireframes](#wireframes)
 2. [Features](#features)
     1. [Database Design](#database-design)
+      1. [Entity Relationship Diagram](#entity-relationship-diagram)
     2. [General](#general)
     3. [Landing Page](#landing-page)
     4. [Service Types Page](#service-types-page)
@@ -104,6 +105,8 @@ The main font used in the site is Raleway, with Sans-Serif as the fallback font 
 ### Database Design
 
 Flake8 was used to enforce python style conformity
+
+#### Entity Relationship Diagram
 
 <img src="./schedulemanager/static/images/erd.JPG">
 
@@ -337,28 +340,49 @@ Manual testing relies on human interaction to execute test cases and identify de
 ### Manual Testing
 
 * Common Elements Testing
-        
+
+    - Navbar
+
+        - Hover function changes background colour of navbar links. $${\color{green}PASS}$$
+        - Navbar links direct user to correct page. $${\color{green}PASS}$$
+        - Navbar collapses on small screen size. $${\color{green}PASS}$$
+        - Selecting collapsed navbar icon opens navbar links. $${\color{green}PASS}$$
+
     - Index Page
 
-        - Team Name prompts appear without request on all screen sizes. - $${\color{green}PASS}$$
-        - Player Name prompts appear without request. - $${\color{green}PASS}$$
-        - Start innings hover effect works on desktop screen size. - $${\color{green}PASS}$$
-        - All other buttons are grey and have no effect prior to 'start innings function'. - $${\color{green}PASS}$$
-        - Start innings turns grey and has no effect following 'start innings' function- $${\color{green}PASS}$$
-        - 'Start Innings' function produces bowling choice prompt. - $${\color{green}PASS}$$
-        - All buttons produce desired effect, ie, a 'dot' or 'wide' alters the expected data, both visible and within object array. - $${\color{green}PASS}$$
-        - 'Wicket' button produces desired result, replaces strike bat with the next bat on the list, shows the dismissed bat and their score within the correct pane. - $${\color{green}PASS}$$
-        - Every 6th legal ball produces a prompt requesting user to choose an alternative bowler. - $${\color{green}PASS}$$
-        - At bowler change the bats alternate strike. - $${\color{green}PASS}$$
-        - At bowler change the stats are updated in correct pane and active bowler stats are changed. - $${\color{green}PASS}$$
-        - After 5th wicket or 10th over the end of innings is dispalyed with score. - $${\color{red}FAIL - Not-implemented-yet}$$
-        - After end of innings the teams and players names are reversed. - $${\color{red}FAIL - Not-implemented-yet}$$
-        - Second Innings plays out in same way as first. - $${\color{red}FAIL - Not-implemented-yet}$$
-        - After 5th wicket or 10th over of second innings prompt displays total scores and winning team. - $${\color{red}FAIL - Not-implemented-yet}$$
+        - List of existing vehicle services appears on home screen.  $${\color{green}PASS}$$
+        - Selecting vehicle activates collapsed section.  $${\color{green}PASS}$$
+        - Collapsed section displays service type, vehicle type and edit/delete buttons .  $${\color{green}PASS}$$
+        - Clicking edit takes user to edit vehicle screen.  $${\color{green}PASS}$$
+        - Existing information displayed for vehicle service $${\color{green}PASS}$$
+        - User is able to edit any data displayed for editing vehicle service. $${\color{green}PASS}$$
+        - Clicking edit vehicle commits data and returns user to home screen, edited information is displayed against relevant vehicle. $${\color{green}PASS}$$
+        - Clicking delete prompts modal requesting confirmation of delete. $${\color{green}PASS}$$
+        - Confirming delete returns user to home screen and relevant vehicle service is removed. $${\color{green}PASS}$$
+        - Service types screen dispalys all existing service types, including edit/delete buttons. $${\color{green}PASS}$$
+        - Clicking edit takes user to edit service type screen. $${\color{green}PASS}$$
+        - Existing information displayed for service type $${\color{green}PASS}$$
+        - User is able to edit any data displayed for editing service type. $${\color{green}PASS}$$
+        - Clicking edit service type commits data and returns user to services screen, edited information is displayed against relevant service type. $${\color{green}PASS}$$
+       - Clicking delete prompts modal requesting confirmation of delete. $${\color{green}PASS}$$
+        - Confirming delete returns user to services screen and relevant service type is removed. $${\color{green}PASS}$$
+        - All vehicles linked to deleted service type also removed $${\color{green}PASS}$$
+        - Within home screen, clicking add vehicle directs user to add vehicle screen $${\color{green}PASS}$$
+        - User is able to enter information-
+          - Vehicle Registration (max characters 20) $${\color{green}PASS}$$
+          - Vehicle type, text area white space is removed on commit $${\color{green}PASS}$$
+          - Work completed, boolean switch $${\color{green}PASS}$$
+          - Due date, date picker activated, choose date and select displays date in field $${\color{green}PASS}$$
+          - Choose service type, dropdown displays existing service types $${\color{green}PASS}$$
+        - Clicking add veicle directs user to home screen $${\color{green}PASS}$$
+        - New vehicle service is displayed with correct information $${\color{green}PASS}$$
+        - Within service types screen clicking new service type directs user to add service tpye screen. $${\color{green}PASS}$$
+        - entering information into new service type field and clicking add service type commits information and returns user to services screen. $${\color{green}PASS}$$
+        - New service type displayed. $${\color{green}PASS}$$
 
-        - **Footer**
-          - Hovering the cursor over nav bar link prompts active effect. $${\color{green}PASS}$$
-          - Clicking on the league site link will open the specific website on a new tab. $${\color{green}PASS}$$
+    - **Footer**
+        - Clicking footer icons opens new tab with correct site. $${\color{green}PASS}$$
+        - Footer styling changes on small screen size. $${\color{green}PASS}$$
 
 ## Finished Product
 
