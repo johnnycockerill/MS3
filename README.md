@@ -91,18 +91,21 @@ The main font used in the site is Raleway, with Sans-Serif as the fallback font 
 
 ### Wireframes
 
-<img src="assets/images/wireframe_image_2.png">
-
-The team statistics section for team 1 develops as the game progresses (see below), at the start of play it will not show.
-
-<img src="assets/images/wireframe_image.png">
-
+<img src="./schedulemanager/static/images/vehicles.png">
+-
+<img src="./schedulemanager/static/images/add_vehicle.png">
+-
+<img src="./schedulemanager/static/images/services.png">
+-
+<img src="./schedulemanager/static/images/add_service_type.png">
 
 ## Features
 
 ### Database Design
 
 Flake8 was used to enforce python style conformity
+
+<img src="./schedulemanager/static/images/erd.JPG">
 
 ### General
 
